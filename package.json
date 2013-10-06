@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "dependencies": {
     "webp-bin": "~0.1.4",
     "mime": "~1.2.11",
-    "MD5": "~1.1.0"
+    "MD5": "~1.1.0",
+    "mkdirp": "~0.3.5"
   },
   "devDependencies": {
     "express": "~3.4.0"
