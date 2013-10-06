@@ -1,6 +1,6 @@
 # WebP Express Middleware
 
-Inspired by [this](http://cloudinary.com/blog/transparent_webp_format_cdn_delivery_based_on_visitors_browsers) post at [Cloudinary](http://cloudinary.com/), this middleware generate and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format.
+Inspired by [this](http://cloudinary.com/blog/transparent_webp_format_cdn_delivery_based_on_visitors_browsers) post at [Cloudinary](http://cloudinary.com/), this middleware generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format.
 
 WebP is a new image format from Google that provides lossless and lossy compression for images on the web. For more information you might wanna read the [officially documentation](https://developers.google.com/speed/webp/) or a great article at html5rocks.com about [image compression](http://www.html5rocks.com/en/tutorials/speed/img-compression/).
 
