@@ -29,7 +29,10 @@
     "express",
     "middleware",
     "compression",
+    "compress",
+    "img",
     "image",
-    "optimiz"
+    "optimize",
+    "minify"
   ]
 }
