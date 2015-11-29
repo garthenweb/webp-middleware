@@ -1,16 +1,17 @@
 # WebP Express Middleware
 
-Inspired by [this](http://cloudinary.com/blog/transparent_webp_format_cdn_delivery_based_on_visitors_browsers) post at [Cloudinary](http://cloudinary.com/), this middleware generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format.
+Inspired by [a post from Cloudinary](http://cloudinary.com/blog/transparent_webp_format_cdn_delivery_based_on_visitors_browsers), this middleware generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the requesting client supports that format.
 
-WebP is a new image format from Google that provides lossless and lossy compression for images on the web. For more information you might wanna read the [officially documentation](https://developers.google.com/speed/webp/) or a great article at html5rocks.com about [image compression](http://www.html5rocks.com/en/tutorials/speed/img-compression/).
+WebP is a new image format from Google that provides lossless and lossy compression for images on the web. For more information please read the [official documentation](https://developers.google.com/speed/webp/) or the article on html5rocks.com about [image compression](http://www.html5rocks.com/en/tutorials/speed/img-compression/).
 
 ## Installation
 
-```shell
+``` bash
 npm install webp-middleware
 ```
 
 ## Usage
+
 ``` javascript
 var http    = require('http');
 var express = require('express');
@@ -24,13 +25,14 @@ app.use(express.static(__dirname + '/public'));
 
 It is important to insert the webp middleware before the express.static middleware.
 
-First parameter is the path of the static files.
+First parameter is the path of the static folder.
 
 Second parameter is an optional options object.
 
-You can also watch into the example folder for an example usage.
+You can also have a look into the example folder for examples.
 
 ## Options
+
 * ``cacheDir`` is the directory where the webp files are saved. Default is ``__dirname + '/../../webp-cache'``
 * ``preset`` delegates to the ``-preset`` option at [webp-bin](https://npmjs.org/package/webp-bin)
 * ``quality`` delegates to the ``-q`` option at [webp-bin](https://npmjs.org/package/webp-bin)
@@ -58,6 +60,6 @@ You can also watch into the example folder for an example usage.
 * ``metadata`` delegates to the ``-metadata`` option at [webp-bin](https://npmjs.org/package/webp-bin)
 
 
-## License ##
+## License
 
 Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).

@@ -1,7 +1,7 @@
 {
   "name": "webp-middleware",
   "version": "0.0.3",
-  "description": "Generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format",
+  "description": "Generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,8 @@
   "author": "Jannick Garthen",
   "license": "MIT",
   "dependencies": {
-    "webp-bin": "~0.1.4",
-    "mime": "~1.2.11",
-    "MD5": "~1.1.0",
+    "cwebp-bin": "^3.0.0",
+    "mime": "~1.3.4",
     "mkdirp": "~0.3.5"
   },
   "devDependencies": {
