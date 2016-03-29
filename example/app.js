@@ -8,7 +8,7 @@ var fs = require('fs');
 var app = express();
 
 app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 var publicDir = __dirname + '/public';
@@ -16,9 +16,9 @@ var cacheDir = __dirname + '/webp-cache';
 
 app.use(compression());
 app.use('/images/photo', webp(publicDir, {
-	quality: 80,
-	preset: 'photo',
-	cacheDir: cacheDir
+  quality: 80,
+  preset: 'photo',
+  cacheDir: cacheDir
 }));
 app.use(express.static(publicDir));
 
