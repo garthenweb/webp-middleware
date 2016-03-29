@@ -24,7 +24,7 @@ var send = function send(res, path, callback) {
 	sendMethod.call(res, path, callback);
 }
 
-var sendAndSave = function (res, path) {
+var sendAndSave = function sendAndSave(res, path) {
 	send(res, path);
 	_tempCache.push(path);
 };
@@ -79,21 +79,21 @@ module.exports = function(basePath, options) {
 		fs.exists(cachePath, function(exists) {
 			if (exists) {
 				sendAndSave(res, cachePath);
-			} else {
-				pathOptions.push(imgPath);
-				pathOptions = pathOptions.concat(optionArr);
-				pathOptions.push('-o');
-				pathOptions.push(cachePath);
-
-				execFile(webpBinPath, pathOptions, function(err) {
-					if (err) {
-						console.error(err);
-						next();
-						return;
-					}
-					sendAndSave(res, cachePath);
-				});
+				return;
 			}
+			pathOptions.push(imgPath);
+			pathOptions = pathOptions.concat(optionArr);
+			pathOptions.push('-o');
+			pathOptions.push(cachePath);
+
+			execFile(webpBinPath, pathOptions, function(err) {
+				if (err) {
+					console.error(err);
+					next();
+					return;
+				}
+				sendAndSave(res, cachePath);
+			});
 		});
 	};
 };
