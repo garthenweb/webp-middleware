@@ -15,8 +15,15 @@ var supportedMimes = [
 ];
 
 var _tempCache = [];
+
+var send = function (res, path, callback){
+	var sendMethod = typeof res.sendFile === "undefined" ? res.sendfile : res.sendFile;
+	
+	sendMethod.call(res, path, callback);
+}
+
 var sendAndSave = function (res, path) {
-	res.sendfile(path);
+	send(res, path);
 	_tempCache.push(path);
 };
 
@@ -55,7 +62,7 @@ module.exports = function(basePath, options) {
 
 			// try lookup cache for fast access
 			if(_tempCache.indexOf(cachePath) !== -1) {
-				res.sendfile(cachePath, function(err) {
+				send(res, cachePath, function(err) {
 					if(err) {
 						_tempCache.splice(_tempCache.indexOf(cachePath), 1);
 						webpMiddleware(req, res, next);
