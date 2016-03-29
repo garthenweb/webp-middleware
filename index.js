@@ -31,7 +31,10 @@ var sendAndSave = function (res, path) {
 
 module.exports = function(basePath, options) {
 	// use custom dir or choose default
-	var cacheDir = options && options.cacheDir ? options.cacheDir : __dirname + '/../../webp-cache';
+	options = options || {};
+	var cacheDir = options.cacheDir ?
+		options.cacheDir :
+		__dirname + '/../../webp-cache';
 
 	// compute options in external file
 	var optionArr = require('./compute-options')(options);
