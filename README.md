@@ -13,9 +13,9 @@ npm install webp-middleware
 ## Usage
 
 ``` javascript
-var http    = require('http');
+var http = require('http');
 var express = require('express');
-var webp    = require('webp-middleware');
+var webp = require('webp-middleware');
 
 var app = express();
 
@@ -34,32 +34,34 @@ You can also have a look into the example folder for examples.
 ## Options
 
 * ``cacheDir`` is the directory where the webp files are saved. Default is ``__dirname + '/../../webp-cache'``
-* ``preset`` delegates to the ``-preset`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``quality`` delegates to the ``-q`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``alphaQuality`` delegates to the ``-alpha_q`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``method`` delegates to the ``-m`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``segments`` delegates to the ``-segments`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``bytes`` delegates to the ``-size`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``psnr`` delegates to the ``-psnr`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``size`` delegates to the ``-s`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be an object with ``width`` and ``height`` keys
-* ``spatialNoiseShaping`` delegates to the ``-sns`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``filter`` delegates to the ``-f`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``strong`` delegates to the ``-strong`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``noStrong`` delegates to the ``-nostrong`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``partitionLimit`` delegates to the ``-partition_limit`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``pass`` delegates to the ``-pass`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``crop`` delegates to the ``-crop`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be an object with ``width``, ``height``, ``x`` and ``y`` keys
-* ``resize`` delegates to the ``-resize`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be an object with ``width`` and ``height`` keys
-* ``multiThreading`` delegates to the ``-mt`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``lowMemory`` delegates to the ``-low_memory`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``alphaMethod`` delegates to the ``-alpha_method`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``alphaCleanup`` delegates to the ``-alpha_cleanup`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``noAlpha`` delegates to the ``-noalpha`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``lossless`` delegates to the ``-lossless`` option at [webp-bin](https://npmjs.org/package/webp-bin). Should be a boolean value
-* ``hint`` delegates to the ``-hint`` option at [webp-bin](https://npmjs.org/package/webp-bin)
-* ``metadata`` delegates to the ``-metadata`` option at [webp-bin](https://npmjs.org/package/webp-bin)
+* ``preset`` delegates to the ``-preset`` option at [cwebp]
+* ``quality`` delegates to the ``-q`` option at [cwebp]
+* ``alphaQuality`` delegates to the ``-alpha_q`` option at [cwebp]
+* ``method`` delegates to the ``-m`` option at [cwebp]
+* ``segments`` delegates to the ``-segments`` option at [cwebp]
+* ``bytes`` delegates to the ``-size`` option at [cwebp]
+* ``psnr`` delegates to the ``-psnr`` option at [cwebp]
+* ``size`` delegates to the ``-s`` option at [cwebp]. Should be an object with ``width`` and ``height`` keys
+* ``spatialNoiseShaping`` delegates to the ``-sns`` option at [cwebp]
+* ``filter`` delegates to the ``-f`` option at [cwebp]
+* ``strong`` delegates to the ``-strong`` option at [cwebp]. Should be a boolean value
+* ``noStrong`` delegates to the ``-nostrong`` option at [cwebp]. Should be a boolean value
+* ``partitionLimit`` delegates to the ``-partition_limit`` option at [cwebp]
+* ``pass`` delegates to the ``-pass`` option at [cwebp]
+* ``crop`` delegates to the ``-crop`` option at [cwebp]. Should be an object with ``width``, ``height``, ``x`` and ``y`` keys
+* ``resize`` delegates to the ``-resize`` option at [cwebp]. Should be an object with ``width`` and ``height`` keys
+* ``multiThreading`` delegates to the ``-mt`` option at [cwebp]. Should be a boolean value
+* ``lowMemory`` delegates to the ``-low_memory`` option at [cwebp]. Should be a boolean value
+* ``alphaMethod`` delegates to the ``-alpha_method`` option at [cwebp]
+* ``alphaCleanup`` delegates to the ``-alpha_cleanup`` option at [cwebp]. Should be a boolean value
+* ``noAlpha`` delegates to the ``-noalpha`` option at [cwebp]. Should be a boolean value
+* ``lossless`` delegates to the ``-lossless`` option at [cwebp]. Should be a boolean value
+* ``hint`` delegates to the ``-hint`` option at [cwebp]
+* ``metadata`` delegates to the ``-metadata`` option at [cwebp]
 
 
 ## License
 
 Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
+[cwebp]: https://developers.google.com/speed/webp/docs/cwebp
