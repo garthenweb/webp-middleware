@@ -57,7 +57,8 @@ module.exports = function(basePath, options) {
 
 		// just move on if mimetypes does not match
 		if (!hasMimetype || !acceptWebp) {
-			return next();
+			next();
+			return;
 		}
 
 		var hash = crypto.createHash('md5').update(req.originalUrl).digest('hex');
@@ -66,7 +67,7 @@ module.exports = function(basePath, options) {
 
 		// try lookup cache for fast access
 		if (_tempCache.indexOf(cachePath) !== -1) {
-			res.sendfile(cachePath, function(err) {
+			send(res, cachePath, function(err) {
 				if (err) {
 					_tempCache.splice(_tempCache.indexOf(cachePath), 1);
 					webpMiddleware(req, res, next);
