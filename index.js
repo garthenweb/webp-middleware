@@ -2,7 +2,7 @@
 
 var execFile    = require('child_process').execFile;
 var fs          = require('fs');
-var webpBinPath = require('webp-bin').path;
+var webpBinPath = require('cwebp-bin');
 var mime        = require('mime');
 var crypto      = require('crypto');
 var path        = require('path');
