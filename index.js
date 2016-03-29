@@ -1,12 +1,12 @@
 'use strict';
 
-var execFile    = require('child_process').execFile;
-var fs          = require('fs');
+var execFile = require('child_process').execFile;
+var fs = require('fs');
 var webpBinPath = require('cwebp-bin');
-var mime        = require('mime');
-var crypto      = require('crypto');
-var path        = require('path');
-var mkdirp      = require('mkdirp');
+var mime = require('mime');
+var crypto = require('crypto');
+var path = require('path');
+var mkdirp = require('mkdirp');
 
 var supportedMimes = [
 	'image/jpeg',
