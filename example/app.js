@@ -2,6 +2,7 @@
 
 var http    = require('http');
 var express = require('express');
+var compression = require('compression');
 var webp    = require('../index.js');
 var fs      = require('fs');
 var app     = express();
@@ -13,7 +14,7 @@ app.get('/', function(req, res) {
 var publicDir = __dirname + '/public';
 var cacheDir = __dirname + '/webp-cache';
 
-app.use(express.compress());
+app.use(compression());
 app.use('/images/photo', webp(publicDir, {
 	quality: 80,
 	preset: 'photo',
