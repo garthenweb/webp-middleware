@@ -16,17 +16,17 @@ var supportedMimes = [
 
 var _tempCache = [];
 
-var send = function send(res, path, callback) {
+var send = function send(res, path, cb) {
   var sendMethod = typeof res.sendFile === 'undefined' ?
     res.sendfile :
     res.sendFile;
 
-  sendMethod.call(res, path, callback);
+  sendMethod.call(res, path, cb);
 }
 
-var sendAndSave = function sendAndSave(res, path) {
-  send(res, path);
+var sendAndSave = function sendAndSave(res, path, cb) {
   _tempCache.push(path);
+  send(res, path, cb);
 };
 
 module.exports = function(basePath, options) {
