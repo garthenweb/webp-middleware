@@ -10,12 +10,12 @@
   "license": "MIT",
   "dependencies": {
     "cwebp-bin": "^3.0.0",
-    "mime": "~1.3.4",
-    "mkdirp": "~0.3.5"
+    "mime": "^1.3.4",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "compression": "^1.6.1",
-    "express": "~4.13.4"
+    "express": "^4.13.4"
   },
   "repository": {
     "type": "git",
