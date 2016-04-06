@@ -34,7 +34,7 @@ module.exports = function(basePath, options) {
   options = options || {};
   var cacheDir = options.cacheDir ?
     options.cacheDir :
-    __dirname + '/../../webp-cache';
+    path.join(process.cwd(), 'webp-cache');
 
   // compute options in external file
   var optionArr = require('./compute-options')(options);
