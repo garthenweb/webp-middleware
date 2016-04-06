@@ -5,14 +5,15 @@ var express = require('express');
 var compression = require('compression');
 var webp = require('../index.js');
 var fs = require('fs');
+var path = require('path');
 var app = express();
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-var publicDir = __dirname + '/public';
-var cacheDir = __dirname + '/webp-cache';
+var publicDir = path.join(__dirname, 'public');
+var cacheDir = path.join(__dirname, 'webp-cache');
 
 app.use(compression());
 app.use('/images/photo', webp(publicDir, {
