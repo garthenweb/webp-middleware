@@ -1,6 +1,6 @@
 {
   "name": "webp-middleware",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generates and delivers JPG-, PNG- and TIFF-images on the fly as WebP-images if the client supports that format.",
   "main": "index.js",
   "scripts": {
