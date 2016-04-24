@@ -59,7 +59,6 @@ You can also have a look into the example folder for examples.
 * ``hint`` delegates to the ``-hint`` option at [cwebp]
 * ``metadata`` delegates to the ``-metadata`` option at [cwebp]
 
-
 ## License
 
 Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).

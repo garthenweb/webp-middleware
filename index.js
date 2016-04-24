@@ -22,7 +22,7 @@ var send = function send(res, path, cb) {
     res.sendFile;
 
   sendMethod.call(res, path, cb);
-}
+};
 
 var sendAndSave = function sendAndSave(res, path, cb) {
   _tempCache.push(path);
