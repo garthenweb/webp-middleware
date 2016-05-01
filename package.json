@@ -11,7 +11,8 @@
   "dependencies": {
     "cwebp-bin": "^3.0.0",
     "mime": "^1.3.4",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "vary": "^1.1.0"
   },
   "devDependencies": {
     "compression": "^1.6.1",

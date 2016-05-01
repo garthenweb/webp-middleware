@@ -7,6 +7,7 @@ var mime = require('mime');
 var crypto = require('crypto');
 var path = require('path');
 var mkdirp = require('mkdirp');
+var vary = require('vary');
 
 var supportedMimes = [
   'image/jpeg',
@@ -20,7 +21,7 @@ var send = function send(res, path, cb) {
   var sendMethod = typeof res.sendFile === 'undefined' ?
     res.sendfile :
     res.sendFile;
-
+  vary(res, 'Accept');
   sendMethod.call(res, path, cb);
 }
 
