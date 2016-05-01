@@ -22,6 +22,7 @@ webp.express(directory, {
 * Write abstract cache
     - Add option to replace default cache
     - Add customizable cache key generator
+    - Add option to invalidate and clear cache
 * Write tests
     - webp supported
     - webp not supported
