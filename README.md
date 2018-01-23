@@ -34,6 +34,7 @@ You can also have a look into the example folder for examples.
 ## Options
 
 * ``cacheDir`` is the directory where the webp files are saved. Default is a folder webp-cache in the executing directory (``path.join(process.cwd(), 'webp-cache')``)
+* ``maxAge`` is the ``max-age`` value (in second) specified in the response ``Cache-Control`` header. Default to 0
 * ``preset`` delegates to the ``-preset`` option at [cwebp]
 * ``quality`` delegates to the ``-q`` option at [cwebp]
 * ``alphaQuality`` delegates to the ``-alpha_q`` option at [cwebp]

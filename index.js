@@ -17,17 +17,18 @@ var supportedMimes = [
 
 var _tempCache = [];
 
-var send = function send(res, path, cb) {
+var send = function send(res, options, cb) {
   var sendMethod = typeof res.sendFile === 'undefined' ?
     res.sendfile :
     res.sendFile;
   vary(res, 'Accept');
-  sendMethod.call(res, path, cb);
+  res.setHeader('Cache-Control', 'public, max-age=' + options.maxAge)
+  sendMethod.call(res, options.path, cb);
 }
 
-var sendAndSave = function sendAndSave(res, path, cb) {
-  _tempCache.push(path);
-  send(res, path, cb);
+var sendAndSave = function sendAndSave(res, options, cb) {
+  _tempCache.push(options.path);
+  send(res, options, cb);
 };
 
 module.exports = function(basePath, options) {
@@ -36,6 +37,10 @@ module.exports = function(basePath, options) {
   var cacheDir = options.cacheDir ?
     options.cacheDir :
     path.join(process.cwd(), 'webp-cache');
+  // use maxAge or use default (0)
+  var maxAge = options.maxAge ?
+    options.maxAge :
+    0;
 
   // compute options in external file
   var optionArr = require('./compute-options')(options);
@@ -69,7 +74,7 @@ module.exports = function(basePath, options) {
 
     // try lookup cache for fast access
     if (_tempCache.indexOf(cachePath) !== -1) {
-      send(res, cachePath, function(err) {
+      send(res, { path: cachePath, maxAge: maxAge }, function(err) {
         if (err) {
           _tempCache.splice(_tempCache.indexOf(cachePath), 1);
           webpMiddleware(req, res, next);
@@ -80,7 +85,7 @@ module.exports = function(basePath, options) {
 
     fs.exists(cachePath, function(exists) {
       if (exists) {
-        sendAndSave(res, cachePath);
+        sendAndSave(res, { path: cachePath, maxAge: maxAge });
         return;
       }
       pathOptions.push(imgPath);
@@ -94,7 +99,7 @@ module.exports = function(basePath, options) {
           next();
           return;
         }
-        sendAndSave(res, cachePath);
+        sendAndSave(res, { path: cachePath, maxAge: maxAge });
       });
     });
   };
