@@ -9,14 +9,14 @@
   "author": "Jannick Garthen",
   "license": "MIT",
   "dependencies": {
-    "cwebp-bin": "^3.0.0",
-    "mime": "^1.3.4",
+    "cwebp-bin": "^5.0.0",
+    "mime": "^2.4.0",
     "mkdirp": "^0.5.1",
-    "vary": "^1.1.0"
+    "vary": "^1.1.2"
   },
   "devDependencies": {
-    "compression": "^1.6.1",
-    "express": "^4.13.4"
+    "compression": "^1.7.4",
+    "express": "^4.16.4"
   },
   "repository": {
     "type": "git",

@@ -50,7 +50,7 @@ module.exports = function(basePath, options) {
    * handles each request and sends a webp image format if the client supports it
    */
   return function webpMiddleware(req, res, next) {
-    var mimeType = mime.lookup(req.originalUrl);
+    var mimeType = mime.getType(req.originalUrl);
     var pathOptions = [];
     var accept = req.headers.accept;
 
